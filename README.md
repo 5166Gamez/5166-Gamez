@@ -1,3 +1,7 @@
+body {
+  background-color: #f0f0f0; /* Replace with your desired color */
+}
+
 this is the home page of 5166 gamez
 
 mind you this is EXTREMELY bare bones as switching to github from google sites may take me some time to actually learn how github sites work
