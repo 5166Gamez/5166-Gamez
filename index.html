@@ -15,14 +15,18 @@
       margin: auto;
       padding: 20px;
     }
-    .header {
-      display: flex; /* Align image and header in a row */
+    .header-container {
+      display: flex; /* Align image and header/description in a row */
       align-items: center; /* Vertically center the content */
       gap: 20px; /* Space between the image and the text */
     }
-    .header img {
+    .header-container img {
       width: 150px; /* Increase the image width */
       height: auto; /* Keep the aspect ratio */
+    }
+    .text-section {
+      display: flex;
+      flex-direction: column; /* Stack the header and description vertically */
     }
     h1 {
       color: #ffffff; /* Set header text to pure white */
@@ -31,7 +35,7 @@
       margin: 0; /* Remove default margin */
     }
     .description {
-      font-size: 18px; /* Add description text under header */
+      font-size: 18px; /* Add description text */
       color: #cccccc; /* Light gray color for the description */
       margin-top: 10px;
     }
@@ -65,11 +69,13 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
+    <div class="header-container">
       <img src="https://raw.githubusercontent.com/5166-gamez/home/main/home.png" alt="Logo"> <!-- Add your image here -->
-      <h1>Home</h1>
+      <div class="text-section">
+        <h1>Home</h1>
+        <p class="description">Welcome to 5166 Gamez! Enjoy playing unblocked games for free and with much more to come soon!</p>
+      </div>
     </div>
-    <p class="description">Welcome to 5166 Gamez! Enjoy playing unblocked games for free and with much more to come soon!</p>
     <hr> <!-- Line divider -->
 
     <div class="button-container">
