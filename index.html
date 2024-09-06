@@ -15,6 +15,15 @@
       margin: auto;
       padding: 20px;
     }
+    .header {
+      display: flex; /* Align image and header in a row */
+      align-items: center; /* Vertically center the content */
+      gap: 20px; /* Space between the image and the text */
+    }
+    .header img {
+      width: 100px; /* Set the image width */
+      height: auto; /* Keep the aspect ratio */
+    }
     .button-container {
       display: flex; /* Align buttons in a row */
       justify-content: center; /* Center align the buttons */
@@ -30,7 +39,7 @@
       border: 0; /* Remove any border if present */
     }
     .image-text {
-      color: white; /* Set text color to white */
+      color: #6d9eeb; /* Set text color to white */
       margin-top: 10px; /* Space between image and text */
       font-size: 16px; /* Set font size for text */
     }
@@ -44,7 +53,10 @@
 </head>
 <body>
   <div class="container">
-    <h1>Home</h1>
+    <div class="header">
+      <img src="https://raw.githubusercontent.com/5166-gamez/home/main/home.png" alt="Logo"> <!-- Add your image here -->
+      <h1>Home</h1>
+    </div>
     <hr> <!-- Line divider -->
     <p>Mind you this is EXTREMELY bare bones as switching to GitHub from Google Sites may take me some time to actually learn how GitHub Sites work.</p>
     <p>For anyone wondering, my school domain actually blocked EVERYONE from using Google Sites completely, at first it was just blocking anyone from using Google Sites that wasn't within our domain, and then this year they just blocked it entirely, so I also lost all my progress to the original 5166 Gamez which was hosted on Google Sites.</p>
