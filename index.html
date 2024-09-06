@@ -8,11 +8,17 @@
       color: white; /* Set text color to white */
       margin: 0;
       padding: 0;
+      background-color: #1d1d1d; /* Dark background color */
     }
     .container {
       max-width: 1200px;
       margin: auto;
       padding: 20px;
+    }
+    .button-container {
+      display: flex; /* Align buttons in a row */
+      justify-content: center; /* Center align the buttons */
+      gap: 20px; /* Space between buttons */
     }
     a.image-link {
       display: inline-block;
@@ -36,7 +42,7 @@
     }
   </style>
 </head>
-<body style="background-color: #1d1d1d;"> <!-- Inline style for background color -->
+<body>
   <div class="container">
     <h1>Home</h1>
     <hr> <!-- Line divider -->
@@ -44,10 +50,16 @@
     <p>For anyone wondering, my school domain actually blocked EVERYONE from using Google Sites completely, at first it was just blocking anyone from using Google Sites that wasn't within our domain, and then this year they just blocked it entirely, so I also lost all my progress to the original 5166 Gamez which was hosted on Google Sites.</p>
     <p>Now, since I've switched to GitHub, I think the amount of stuff that can be done here will be IMMACULATE!!</p>
 
-    <a href="https://5166-gamez.github.io/games/" class="image-link">
-      <img src="https://raw.githubusercontent.com/5166-gamez/home/main/home.png" alt="Games" width="200"> <!-- Image -->
-      <div class="image-text">Games</div> <!-- Text below the image -->
-    </a>
+    <div class="button-container">
+      <a href="https://5166-gamez.github.io/games/" class="image-link">
+        <img src="https://raw.githubusercontent.com/5166-gamez/home/main/home.png" alt="Games" width="200"> <!-- Existing Image -->
+        <div class="image-text">Games</div> <!-- Text below the existing image -->
+      </a>
+      <a href="https://5166-gamez.github.io/changelogs" class="image-link">
+        <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Changelogs" style="width: 150px; height: auto;"> <!-- New Image -->
+        <div class="image-text">Changelogs</div> <!-- Text below the new image -->
+      </a>
+    </div>
   </div>
 </body>
 </html>
