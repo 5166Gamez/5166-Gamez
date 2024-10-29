@@ -22,17 +22,18 @@
             font-size: 1.5em;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             transition: top 0.5s ease; /* Smooth transition for hiding */
+            z-index: 1;
         }
 
         /* Arrows styling */
         .arrows {
-            position: absolute;
-            top: 50%;
+            position: fixed;
+            top: 10px;
             right: 10px;
-            transform: translateY(-50%);
             display: flex;
             flex-direction: column;
             gap: 5px;
+            z-index: 2;
         }
 
         .arrow {
@@ -58,11 +59,11 @@
 
 <header id="header">
     My Dark Purple Header
-    <div class="arrows">
-        <span class="arrow" onclick="toggleHeader()">▲</span>
-        <span class="arrow" onclick="toggleHeader()">▲</span>
-    </div>
 </header>
+<div class="arrows">
+    <span class="arrow" onclick="toggleHeader()">▲</span>
+    <span class="arrow" onclick="toggleHeader()">▲</span>
+</div>
 <div class="content"></div>
 
 <script>
