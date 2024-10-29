@@ -18,13 +18,55 @@
             width: 100%;
             background-color: #131017; /* Slightly darker purple */
             padding: 10px 0;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             transition: top 0.5s ease; /* Smooth transition for hiding */
             z-index: 1;
+        }
+
+        /* Logo and Page Title container */
+        .logo-title {
             display: flex;
-            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        /* Logo Image Styling */
+        .logo-title img {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        /* Page Name styling */
+        .page-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Centered navigation buttons */
+        .nav-buttons {
+            display: flex;
             gap: 20px;
+        }
+
+        /* Navigation button styling */
+        .nav-button {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: #28223c;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #3b334a;
         }
 
         /* Centered arrow container */
@@ -56,29 +98,23 @@
             padding-top: 60px; /* Pushes content below the fixed header */
             height: 200vh; /* Makes the page scrollable */
         }
-
-        /* Button styling */
-        .nav-button {
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            background-color: #28223c;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: background-color 0.3s;
-        }
-
-        .nav-button:hover {
-            background-color: #3b334a;
-        }
     </style>
 </head>
 <body>
 
 <header id="header">
-    <a href="https://5166-gamez.github.io/home" class="nav-button">Home</a>
-    <a href="https://5166-gamez.github.io/games" class="nav-button">Games</a>
-    <a href="https://5166-gamez.github.io/changelogs" class="nav-button">Changelogs</a>
+    <!-- Left: Logo and Page Title -->
+    <div class="logo-title">
+        <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Icon">
+        <span class="page-name">Home</span>
+    </div>
+
+    <!-- Center: Navigation buttons -->
+    <div class="nav-buttons">
+        <a href="https://5166-gamez.github.io/home" class="nav-button">Home</a>
+        <a href="https://5166-gamez.github.io/games" class="nav-button">Games</a>
+        <a href="https://5166-gamez.github.io/changelogs" class="nav-button">Changelogs</a>
+    </div>
 </header>
 
 <div class="arrows">
