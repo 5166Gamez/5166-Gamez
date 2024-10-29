@@ -108,6 +108,8 @@
             display: flex; /* Enable flexbox for layout */
             justify-content: flex-start; /* Align items to the left */
             transition: margin-top 0.5s ease; /* Smooth transition for content movement */
+            flex-direction: column; /* Arrange sections vertically */
+            align-items: flex-start; /* Align items to the left */
         }
 
         /* Section for image, title, and description */
@@ -140,6 +142,41 @@
         .intro-description {
             font-size: 1em;
             margin-top: 5px;
+        }
+
+        /* Button Section Styling */
+        .button-section {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap onto the next line */
+            gap: 20px; /* Space between buttons */
+            padding: 20px; /* Padding around the button section */
+            margin-top: 100px; /* Space from the intro section */
+        }
+
+        /* Individual Button with Icon */
+        .button {
+            background-color: #28223c; /* Background for buttons */
+            border-radius: 8px; /* Rounded corners */
+            text-align: center; /* Center text and icon */
+            padding: 20px; /* Padding inside the button */
+            width: 120px; /* Fixed width for buttons */
+            transition: background-color 0.3s; /* Transition for hover effect */
+        }
+
+        .button:hover {
+            background-color: #3b334a; /* Darker on hover */
+        }
+
+        /* Icon Styling */
+        .button img {
+            width: 50px; /* Icon width */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Button Title Styling */
+        .button-title {
+            margin-top: 10px; /* Space above title */
+            font-size: 1em; /* Font size for title */
         }
     </style>
 </head>
@@ -178,6 +215,26 @@
             <div class="intro-description">Welcome to 5166 Gamez! This is the Home page, to navigate through other pages, use the header at the top or use the buttons at the bottom, while also learning more about the site! Enjoy playing unblocked games!</div>
         </div>
     </div>
+
+    <!-- Button Section -->
+    <div class="button-section">
+        <div class="button">
+            <img src="https://via.placeholder.com/50" alt="Button 1 Icon">
+            <div class="button-title">Button 1</div>
+        </div>
+        <div class="button">
+            <img src="https://via.placeholder.com/50" alt="Button 2 Icon">
+            <div class="button-title">Button 2</div>
+        </div>
+        <div class="button">
+            <img src="https://via.placeholder.com/50" alt="Button 3 Icon">
+            <div class="button-title">Button 3</div>
+        </div>
+        <div class="button">
+            <img src="https://via.placeholder.com/50" alt="Button 4 Icon">
+            <div class="button-title">Button 4</div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -191,14 +248,13 @@
         if (headerVisible) {
             header.style.top = "-60px"; // Hide header upwards
             content.style.marginTop = "0"; // Move content up
-            arrows.forEach(arrow => arrow.classList.add("hidden")); // Rotate arrows down
+            arrows.forEach(arrow => arrow.classList.add("hidden")); // Rotate arrows
         } else {
-            header.style.top = "0"; // Show header again
-            content.style.marginTop = "60px"; // Push content down
-            arrows.forEach(arrow => arrow.classList.remove("hidden")); // Rotate arrows up
+            header.style.top = "0"; // Show header
+            content.style.marginTop = "60px"; // Move content down
+            arrows.forEach(arrow => arrow.classList.remove("hidden")); // Reset arrows
         }
-        
-        headerVisible = !headerVisible;
+        headerVisible = !headerVisible; // Toggle visibility state
     }
 </script>
 
