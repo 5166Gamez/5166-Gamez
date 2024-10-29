@@ -19,11 +19,20 @@
             background-color: #131017; /* Slightly darker purple */
             padding: 10px 0;
             display: flex;
+            justify-content: center; /* Center content within header */
             align-items: center;
-            justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             transition: top 0.5s ease; /* Smooth transition for hiding */
             z-index: 1;
+        }
+
+        /* Container for logo and navigation */
+        .header-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            justify-content: space-between;
         }
 
         /* Logo and Page Title container */
@@ -31,7 +40,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-left: 20px;
         }
 
         /* Logo Image Styling */
@@ -52,6 +60,7 @@
         .nav-buttons {
             display: flex;
             gap: 20px;
+            margin: 0 auto; /* Center the nav buttons */
         }
 
         /* Navigation button styling */
@@ -103,17 +112,19 @@
 <body>
 
 <header id="header">
-    <!-- Left: Logo and Page Title -->
-    <div class="logo-title">
-        <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Icon">
-        <span class="page-name">Home</span>
-    </div>
+    <div class="header-content">
+        <!-- Left: Logo and Page Title -->
+        <div class="logo-title">
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Icon">
+            <span class="page-name">Home</span>
+        </div>
 
-    <!-- Center: Navigation buttons -->
-    <div class="nav-buttons">
-        <a href="https://5166-gamez.github.io/home" class="nav-button">Home</a>
-        <a href="https://5166-gamez.github.io/games" class="nav-button">Games</a>
-        <a href="https://5166-gamez.github.io/changelogs" class="nav-button">Changelogs</a>
+        <!-- Center: Navigation buttons -->
+        <div class="nav-buttons">
+            <a href="https://5166-gamez.github.io/home" class="nav-button">Home</a>
+            <a href="https://5166-gamez.github.io/games" class="nav-button">Games</a>
+            <a href="https://5166-gamez.github.io/changelogs" class="nav-button">Changelogs</a>
+        </div>
     </div>
 </header>
 
