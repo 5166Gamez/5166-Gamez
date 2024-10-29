@@ -19,10 +19,12 @@
             background-color: #131017; /* Slightly darker purple */
             padding: 10px 0;
             text-align: center;
-            font-size: 1.5em;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             transition: top 0.5s ease; /* Smooth transition for hiding */
             z-index: 1;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         /* Centered arrow container */
@@ -54,17 +56,36 @@
             padding-top: 60px; /* Pushes content below the fixed header */
             height: 200vh; /* Makes the page scrollable */
         }
+
+        /* Button styling */
+        .nav-button {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: #28223c;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #3b334a;
+        }
     </style>
 </head>
 <body>
 
 <header id="header">
-    My Dark Purple Header
+    <a href="https://5166-gamez.github.io/home" class="nav-button">Home</a>
+    <a href="https://5166-gamez.github.io/games" class="nav-button">Games</a>
+    <a href="https://5166-gamez.github.io/changelogs" class="nav-button">Changelogs</a>
 </header>
+
 <div class="arrows">
     <span class="arrow" onclick="toggleHeader()">▲</span>
     <span class="arrow" onclick="toggleHeader()">▲</span>
 </div>
+
 <div class="content"></div>
 
 <script>
