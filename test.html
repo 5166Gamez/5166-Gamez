@@ -21,9 +21,30 @@
             text-align: center;
             font-size: 1.5em;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            transition: top 0.5s ease; /* Smooth transition for hiding */
         }
 
-        /* Add some content for scrolling */
+        /* Arrows styling */
+        .arrows {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .arrow {
+            font-size: 1.5em;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease; /* Rotate smoothly */
+        }
+
+        /* Rotated arrows for showing the header */
+        .arrow.hidden {
+            transform: rotate(180deg); /* Pointing down */
+        }
+
+        /* Content styling for scrollable effect */
         .content {
             padding-top: 60px; /* Pushes content below the fixed header */
             height: 200vh; /* Makes the page scrollable */
@@ -32,8 +53,33 @@
 </head>
 <body>
 
-<header>My Dark Purple Header</header>
+<header id="header">
+    My Dark Purple Header
+    <div class="arrows">
+        <span class="arrow" onclick="toggleHeader()">▲</span>
+        <span class="arrow" onclick="toggleHeader()">▲</span>
+    </div>
+</header>
 <div class="content"></div>
+
+<script>
+    let headerVisible = true;
+    
+    function toggleHeader() {
+        const header = document.getElementById("header");
+        const arrows = document.querySelectorAll(".arrow");
+        
+        if (headerVisible) {
+            header.style.top = "-60px"; // Hide header upwards
+            arrows.forEach(arrow => arrow.classList.add("hidden")); // Rotate arrows down
+        } else {
+            header.style.top = "0"; // Show header again
+            arrows.forEach(arrow => arrow.classList.remove("hidden")); // Rotate arrows up
+        }
+        
+        headerVisible = !headerVisible;
+    }
+</script>
 
 </body>
 </html>
