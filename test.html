@@ -9,7 +9,7 @@
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px; /* Added padding around the body */
+            padding: 0; /* Reset padding */
         }
 
         /* Header styling */
@@ -18,7 +18,6 @@
             top: 0;
             width: 100%;
             background-color: #131017; /* Slightly darker purple */
-            padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             z-index: 1;
             transition: top 0.5s ease; /* Smooth transition for hiding */
@@ -39,6 +38,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            padding: 10px; /* Added padding for logo and title */
         }
 
         /* Logo Image Styling */
@@ -53,6 +53,13 @@
             font-size: 1.2em;
             font-weight: bold;
             color: white;
+        }
+
+        /* Divider styling */
+        .divider {
+            height: 2px;
+            background-color: white; /* Color of the divider */
+            margin: 5px 0; /* Space around the divider */
         }
 
         /* Center section: Navigation buttons */
@@ -186,15 +193,8 @@
             <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Icon">
             <span class="page-name">Home</span>
         </div>
-
-        <!-- Center: Navigation buttons -->
-        <div class="nav-buttons">
-            <a href="https://5166-gamez.github.io/home" class="nav-button">Home</a>
-            <a href="https://5166-gamez.github.io/games" class="nav-button">Games</a>
-            <a href="https://5166-gamez.github.io/news" class="nav-button">News</a>
-            <a href="https://5166-gamez.github.io/changelogs" class="nav-button">Changelogs</a>
-        </div>
     </div>
+    <div class="divider"></div> <!-- Divider under the title -->
 </header>
 
 <!-- Right: Arrows outside of header -->
