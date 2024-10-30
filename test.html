@@ -142,13 +142,24 @@
             margin-top: 5px;
         }
 
+        /* Divider styling */
+        .divider {
+            width: 50%; /* Same width as intro section */
+            height: 2px; /* Height of the divider */
+            background-color: white; /* Color of the divider */
+            margin: 20px 0; /* Spacing above and below the divider */
+            position: absolute; /* Position it under the intro section */
+            top: 160px; /* Adjust this based on your layout */
+            left: 20px; /* Align with intro section */
+        }
+
         /* Button Section Styling */
         .button-section {
             display: flex;
             flex-wrap: wrap; /* Allow buttons to wrap onto the next line */
             gap: 20px; /* Space between buttons */
             padding: 20px; /* Padding around the button section */
-            margin-top: 100px; /* Space from the intro section */
+            margin-top: 30px; /* Space from the divider */
         }
 
         /* Individual Button with Icon */
@@ -213,6 +224,9 @@
             <div class="intro-description">Welcome to 5166 Gamez! This is the Home page, to navigate through other pages, use the header at the top or use the buttons at the bottom, while also learning more about the site! Enjoy playing unblocked games!</div>
         </div>
     </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
 
     <!-- Button Section -->
     <div class="button-section">
