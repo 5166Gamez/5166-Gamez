@@ -164,8 +164,8 @@
             border-radius: 8px; /* Rounded corners */
             text-align: center; /* Center text and icon */
             padding: 20px; /* Increased padding for larger button */
-            width: 185px; /* Fixed width for buttons */
-            height: 200px
+            width: 200px; /* Increased width for 'Games' button */
+            height: 200px; /* Fixed height for buttons */
             transition: background-color 0.3s; /* Transition for hover effect */
             margin-bottom: 15px; /* Space below each button */
         }
@@ -250,20 +250,20 @@
 </div>
 
 <script>
-    let headerVisible = true;
-
     function toggleHeader() {
         const header = document.getElementById("header");
+        const content = document.getElementById("content");
         const arrows = document.querySelectorAll(".arrow");
         
-        if (headerVisible) {
-            header.style.top = "-60px"; // Hide header upwards
-            arrows.forEach(arrow => arrow.classList.add("hidden")); // Rotate arrows
+        if (header.style.top === "0px") {
+            header.style.top = "-60px";
+            content.style.paddingTop = "0";
+            arrows.forEach(arrow => arrow.classList.add("hidden"));
         } else {
-            header.style.top = "0"; // Show header
-            arrows.forEach(arrow => arrow.classList.remove("hidden")); // Reset arrows
+            header.style.top = "0px";
+            content.style.paddingTop = "60px";
+            arrows.forEach(arrow => arrow.classList.remove("hidden"));
         }
-        headerVisible = !headerVisible; // Toggle visibility state
     }
 </script>
 
