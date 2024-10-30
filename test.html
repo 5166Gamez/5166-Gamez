@@ -103,10 +103,11 @@
         /* Content styling for scrollable effect */
         .content {
             padding-top: 60px; /* Pushes content below the fixed header */
-            height: 200vh; /* Makes the page scrollable */
             display: flex; /* Enable flexbox for layout */
             flex-direction: column; /* Arrange sections vertically */
-            align-items: flex-start; /* Align items to the left */
+            align-items: center; /* Center items */
+            margin: 0 auto; /* Center the content */
+            max-width: 1200px; /* Limit the max width of the content */
         }
 
         /* Section for image, title, and description */
@@ -117,10 +118,8 @@
             background-color: #131017; /* Same color as the header */
             padding: 20px; /* Padding inside the section */
             border-radius: 8px; /* Rounded corners */
-            width: 50%; /* Set to 50% width to maintain alignment */
-            position: absolute; /* Absolute positioning to place at the top left */
-            top: 70px; /* Align to the top with padding for the header */
-            left: 20px; /* Padding from the left */
+            width: 100%; /* Full width */
+            margin-bottom: 20px; /* Space below the title card */
         }
 
         /* Image styling */
@@ -156,7 +155,6 @@
             flex-direction: column; /* Stack buttons vertically */
             align-items: center; /* Center buttons */
             padding: 20px; /* Padding around the button section */
-            margin-top: 30px; /* Space from the divider */
         }
 
         /* Individual Button with Icon */
@@ -215,6 +213,7 @@
 
 <!-- Content Section -->
 <div class="content" id="content">
+    <!-- Section for image, title, and description -->
     <div class="intro-section">
         <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Home">
         <div>
