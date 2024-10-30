@@ -107,7 +107,6 @@
             height: 200vh; /* Makes the page scrollable */
             display: flex; /* Enable flexbox for layout */
             justify-content: flex-start; /* Align items to the left */
-            transition: margin-top 0.5s ease; /* Smooth transition for content movement */
             flex-direction: column; /* Arrange sections vertically */
             align-items: flex-start; /* Align items to the left */
         }
@@ -151,7 +150,6 @@
             gap: 20px; /* Space between buttons */
             padding: 20px; /* Padding around the button section */
             margin-top: 100px; /* Space from the intro section */
-            transition: margin-top 0.5s ease; /* Smooth transition for button section */
         }
 
         /* Individual Button with Icon */
@@ -218,7 +216,7 @@
     </div>
 
     <!-- Button Section -->
-    <div class="button-section" id="button-section">
+    <div class="button-section">
         <div class="button">
             <img src="https://raw.githubusercontent.com/5166-gamez/home/main/games.png" alt="Games Icon">
             <div class="button-title">Games</div>
@@ -231,22 +229,16 @@
 
     function toggleHeader() {
         const header = document.getElementById("header");
-        const content = document.getElementById("content");
-        const buttonSection = document.getElementById("button-section");
         const arrows = document.querySelectorAll(".arrow");
         
         if (headerVisible) {
             header.style.top = "-60px"; // Hide header upwards
-            content.style.marginTop = "0"; // Move content up
-            buttonSection.style.marginTop = "0"; // Move button section up
             arrows.forEach(arrow => arrow.classList.add("hidden")); // Rotate arrows
         } else {
             header.style.top = "0"; // Show header
-            content.style.marginTop = "60px"; // Move content down
-            buttonSection.style.marginTop = "100px"; // Move button section back down
-            arrows.forEach(arrow => arrow.classList.remove("hidden")); // Rotate arrows back
+            arrows.forEach(arrow => arrow.classList.remove("hidden")); // Reset arrows
         }
-        headerVisible = !headerVisible; // Toggle header visibility
+        headerVisible = !headerVisible; // Toggle visibility state
     }
 </script>
 
