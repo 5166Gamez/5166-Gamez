@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: #1b171e; /* Main background color */
+            background-color: #1b171e;
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -16,53 +16,46 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #131017; /* Slightly darker purple */
+            background-color: #131017;
             padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             z-index: 1;
-            transition: top 0.5s ease; /* Smooth transition for hiding */
+            transition: top 0.5s ease;
         }
 
-        /* Container for full header layout */
         .header-container {
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Space between left and right sections */
-            width: 100%;
-            max-width: 1200px; /* Limit the max width of the header */
-            margin: 0 auto; /* Center header in the viewport */
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* Left section: Logo and Page Title */
         .logo-title {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* Logo Image Styling */
         .logo-title img {
             width: 40px;
             height: 40px;
             border-radius: 5px;
         }
 
-        /* Page Name styling */
         .page-name {
             font-size: 1.2em;
             font-weight: bold;
             color: white;
         }
 
-        /* Center section: Navigation buttons */
         .nav-buttons {
             display: flex;
-            justify-content: center; /* Center navigation buttons */
             gap: 20px;
-            flex-grow: 1; /* Allow this section to grow and fill space */
+            flex-grow: 1;
+            justify-content: center;
         }
 
-        /* Navigation button styling */
         .nav-button {
             color: white;
             text-decoration: none;
@@ -77,59 +70,53 @@
             background-color: #3b334a;
         }
 
-        /* Right section: Arrows */
         .arrows {
             display: flex;
             flex-direction: column;
-            align-items: flex-end; /* Align arrows to the right */
-            gap: 3px; /* Gap between arrows */
-            position: fixed; /* Keep arrows fixed */
-            top: 15px; /* Position them at the top */
-            right: 20px; /* Align to the right */
+            align-items: flex-end;
+            gap: 3px;
+            position: fixed;
+            top: 15px;
+            right: 20px;
             z-index: 2;
         }
 
         .arrow {
             cursor: pointer;
             font-size: 1.2em;
-            transition: transform 0.3s ease; /* Rotate smoothly */
+            transition: transform 0.3s ease;
         }
 
-        /* Rotated arrows for showing the header */
         .arrow.hidden {
-            transform: rotate(180deg); /* Pointing down */
+            transform: rotate(180deg);
         }
 
-        /* Content styling for scrollable effect */
         .content {
-            padding-top: 70px; /* Pushes content below the fixed header */
-            display: flex; /* Enable flexbox for layout */
-            flex-direction: column; /* Arrange sections vertically */
-            align-items: flex-start; /* Align items to the left */
-            margin: 0 auto; /* Center the content */
-            max-width: 1200px; /* Limit the max width of the content */
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1200px;
         }
 
-        /* Section for image, title, and description */
         .intro-section {
             display: flex;
             align-items: center;
-            gap: 20px; /* Space between image and text */
-            background-color: #131017; /* Same color as the header */
-            padding: 20px; /* Padding inside the section */
-            border-radius: 8px; /* Rounded corners */
-            width: 50%; /* Set to 50% of the screen width */
-            margin: 20px 0 0 0; /* Space above, remove margin-bottom */
+            gap: 20px;
+            background-color: #131017;
+            padding: 20px;
+            border-radius: 8px;
+            width: 50%;
+            margin: 20px 0 0 0;
         }
 
-        /* Image styling */
         .intro-section img {
-            width: 100px; /* Adjust as needed */
-            height: auto; /* Maintain aspect ratio */
+            width: 100px;
+            height: auto;
             border-radius: 5px;
         }
 
-        /* Title and description styling */
         .intro-title {
             font-size: 1.5em;
             font-weight: bold;
@@ -140,53 +127,50 @@
             margin-top: 5px;
         }
 
-        /* Divider styling */
         .divider {
-            width: 100%; /* Full width across the page */
-            height: 2px; /* Height of the divider */
-            background-color: white; /* Color of the divider */
-            margin: 20px 0; /* Spacing above and below the divider */
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            margin: 20px 0;
         }
 
-        /* Button Section Styling */
+        /* Centered Button Section */
         .button-section {
             display: flex;
-            justify-content: center; /* Center buttons in this section */
-            align-items: center; /* Center buttons vertically */
-            flex-wrap: wrap; /* Stack buttons vertically if needed */
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 20px;
-            padding: 20px; /* Padding around the button section */
-            margin-top: 30px; /* Adjust spacing below the intro section */
+            padding: 20px;
+            margin-top: 30px;
+            width: 100%;
         }
 
-        /* Individual Button with Icon */
         .button {
-            background-color: #131017; /* Background for buttons */
-            border-radius: 8px; /* Rounded corners */
-            text-align: center; /* Center text and icon */
-            padding: 20px; /* Increased padding for larger button */
-            width: 185px; /* Fixed width for buttons */
+            background-color: #131017;
+            border-radius: 8px;
+            text-align: center;
+            padding: 20px;
+            width: 185px;
             height: 200px;
-            transition: background-color 0.3s; /* Transition for hover effect */
-            margin-bottom: 15px; /* Space below each button */
-            text-decoration: none; /* Remove underline from links */
-            color: white; /* Text color */
+            transition: background-color 0.3s;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: white;
         }
 
         .button:hover {
-            background-color: #3b334a; /* Darker on hover */
+            background-color: #3b334a;
         }
 
-        /* Icon Styling */
         .button img {
-            width: 150px; /* Increased icon width */
-            height: auto; /* Maintain aspect ratio */
+            width: 150px;
+            height: auto;
         }
 
-        /* Button Title Styling */
         .button-title {
-            margin-top: 10px; /* Space above title */
-            font-size: 1em; /* Font size for title */
+            margin-top: 10px;
+            font-size: 1em;
         }
     </style>
 </head>
