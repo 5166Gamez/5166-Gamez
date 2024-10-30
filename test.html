@@ -54,13 +54,6 @@
             color: white;
         }
 
-        /* Version Styling */
-        .version {
-            font-size: 1em; /* Font size for version */
-            margin-left: 20px; /* Space from title */
-            text-align: right; /* Right-align version text */
-        }
-
         /* Center section: Navigation buttons */
         .nav-buttons {
             display: flex;
@@ -204,10 +197,6 @@
         <div class="logo-title">
             <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Icon">
             <span class="page-name">Home</span>
-            <div class="version">
-                <div>Version:</div>
-                <div>V3.0.0</div>
-            </div>
         </div>
 
         <!-- Center: Navigation buttons -->
@@ -248,38 +237,39 @@
             <div class="button-title">Games</div>
         </div>
         <div class="button">
-            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Changelog Icon">
-            <div class="button-title">Changelog</div>
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Feedback Icon">
+            <div class="button-title">Feedback</div>
         </div>
         <div class="button">
-            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/news.png" alt="News Icon">
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="News Icon">
             <div class="button-title">News</div>
         </div>
         <div class="button">
-            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/feedback.png" alt="Feedback Icon">
-            <div class="button-title">Feedback</div>
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Changelogs Icon">
+            <div class="button-title">Changelogs</div>
         </div>
     </div>
 </div>
 
 <script>
-    // JavaScript function to toggle header visibility
-    function toggleHeader() {
-        const header = document.getElementById("header");
-        const content = document.getElementById("content");
-        const arrows = document.querySelectorAll(".arrow");
+    let headerVisible = true;
 
-        // Toggle the header visibility
-        if (header.style.top === "0px") {
-            header.style.top = "-60px"; // Move the header up
-            content.style.paddingTop = "0"; // Adjust content padding
-            arrows[0].classList.add("hidden"); // Hide up arrow
-            arrows[1].classList.remove("hidden"); // Show down arrow
+    function toggleHeader() {
+        const header = document.getElementById('header');
+        if (headerVisible) {
+            header.style.top = '-60px'; // Move header up (hide)
+            headerVisible = false;
+            // Change arrow direction
+            document.querySelectorAll('.arrow').forEach(arrow => {
+                arrow.classList.toggle('hidden');
+            });
         } else {
-            header.style.top = "0px"; // Restore header position
-            content.style.paddingTop = "60px"; // Restore content padding
-            arrows[0].classList.remove("hidden"); // Show up arrow
-            arrows[1].classList.add("hidden"); // Hide down arrow
+            header.style.top = '0'; // Move header back down (show)
+            headerVisible = true;
+            // Change arrow direction
+            document.querySelectorAll('.arrow').forEach(arrow => {
+                arrow.classList.toggle('hidden');
+            });
         }
     }
 </script>
