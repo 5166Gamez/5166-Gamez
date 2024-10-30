@@ -54,11 +54,11 @@
             color: white;
         }
 
-        /* Version Info styling */
-        .version-info {
-            text-align: right; /* Align text to the right */
+        /* Version Styling */
+        .version {
             font-size: 1em; /* Font size for version */
-            margin-left: 20px; /* Space between title and version text */
+            margin-left: 20px; /* Space from title */
+            text-align: right; /* Right-align version text */
         }
 
         /* Center section: Navigation buttons */
@@ -204,12 +204,10 @@
         <div class="logo-title">
             <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Icon">
             <span class="page-name">Home</span>
-        </div>
-
-        <!-- Version Info -->
-        <div class="version-info">
-            <div>Version:</div>
-            <div>V3.0.0</div>
+            <div class="version">
+                <div>Version:</div>
+                <div>V3.0.0</div>
+            </div>
         </div>
 
         <!-- Center: Navigation buttons -->
@@ -250,29 +248,39 @@
             <div class="button-title">Games</div>
         </div>
         <div class="button">
-            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/feedback.png" alt="Feedback Icon">
-            <div class="button-title">Feedback</div>
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Changelog Icon">
+            <div class="button-title">Changelog</div>
         </div>
         <div class="button">
             <img src="https://raw.githubusercontent.com/5166-gamez/home/main/news.png" alt="News Icon">
             <div class="button-title">News</div>
         </div>
         <div class="button">
-            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Changelog Icon">
-            <div class="button-title">Changelog</div>
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/feedback.png" alt="Feedback Icon">
+            <div class="button-title">Feedback</div>
         </div>
     </div>
 </div>
 
 <script>
-    let headerVisible = true;
-
+    // JavaScript function to toggle header visibility
     function toggleHeader() {
-        const header = document.getElementById('header');
-        const content = document.getElementById('content');
-        headerVisible = !headerVisible;
-        header.style.top = headerVisible ? '0' : '-100px'; // Adjust the value as needed
-        content.style.paddingTop = headerVisible ? '60px' : '10px'; // Adjust content padding accordingly
+        const header = document.getElementById("header");
+        const content = document.getElementById("content");
+        const arrows = document.querySelectorAll(".arrow");
+
+        // Toggle the header visibility
+        if (header.style.top === "0px") {
+            header.style.top = "-60px"; // Move the header up
+            content.style.paddingTop = "0"; // Adjust content padding
+            arrows[0].classList.add("hidden"); // Hide up arrow
+            arrows[1].classList.remove("hidden"); // Show down arrow
+        } else {
+            header.style.top = "0px"; // Restore header position
+            content.style.paddingTop = "60px"; // Restore content padding
+            arrows[0].classList.remove("hidden"); // Show up arrow
+            arrows[1].classList.add("hidden"); // Hide down arrow
+        }
     }
 </script>
 </body>
