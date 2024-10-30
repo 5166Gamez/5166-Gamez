@@ -153,9 +153,11 @@
         .button-section {
             display: flex;
             justify-content: center; /* Center buttons in this section */
-            flex-wrap: wrap; /* Stack buttons vertically */
+            align-items: center; /* Center buttons vertically */
+            flex-wrap: wrap; /* Stack buttons vertically if needed */
             gap: 20px;
             padding: 20px; /* Padding around the button section */
+            margin-top: 30px; /* Adjust spacing below the intro section */
         }
 
         /* Individual Button with Icon */
@@ -164,8 +166,8 @@
             border-radius: 8px; /* Rounded corners */
             text-align: center; /* Center text and icon */
             padding: 20px; /* Increased padding for larger button */
-            width: 200px; /* Increased width for 'Games' button */
-            height: 200px; /* Fixed height for buttons */
+            width: 185px; /* Fixed width for buttons */
+            height: 200px;
             transition: background-color 0.3s; /* Transition for hover effect */
             margin-bottom: 15px; /* Space below each button */
         }
@@ -250,22 +252,26 @@
 </div>
 
 <script>
+    let headerVisible = true;
+
     function toggleHeader() {
-        const header = document.getElementById("header");
-        const content = document.getElementById("content");
-        const arrows = document.querySelectorAll(".arrow");
-        
-        if (header.style.top === "0px") {
-            header.style.top = "-60px";
-            content.style.paddingTop = "0";
-            arrows.forEach(arrow => arrow.classList.add("hidden"));
+        const header = document.getElementById('header');
+        if (headerVisible) {
+            header.style.top = '-60px'; // Move header up (hide)
+            headerVisible = false;
+            // Change arrow direction
+            document.querySelectorAll('.arrow').forEach(arrow => {
+                arrow.classList.toggle('hidden');
+            });
         } else {
-            header.style.top = "0px";
-            content.style.paddingTop = "60px";
-            arrows.forEach(arrow => arrow.classList.remove("hidden"));
+            header.style.top = '0'; // Move header back down (show)
+            headerVisible = true;
+            // Change arrow direction
+            document.querySelectorAll('.arrow').forEach(arrow => {
+                arrow.classList.toggle('hidden');
+            });
         }
     }
 </script>
-
 </body>
 </html>
