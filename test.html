@@ -83,10 +83,10 @@
             flex-direction: column;
             align-items: flex-end; /* Align arrows to the right */
             gap: 3px; /* Gap between arrows */
-            z-index: 2;
             position: fixed; /* Keep arrows fixed */
             top: 15px; /* Position them at the top */
             right: 20px; /* Align to the right */
+            z-index: 2;
         }
 
         .arrow {
@@ -102,7 +102,7 @@
 
         /* Content styling for scrollable effect */
         .content {
-            padding-top: 60px; /* Pushes content below the fixed header */
+            padding-top: 70px; /* Pushes content below the fixed header */
             display: flex; /* Enable flexbox for layout */
             flex-direction: column; /* Arrange sections vertically */
             align-items: flex-start; /* Align items to the left */
@@ -120,7 +120,6 @@
             border-radius: 8px; /* Rounded corners */
             width: 50%; /* Set to 50% of the screen width */
             margin: 20px 0 0 0; /* Space above, remove margin-bottom */
-            margin-top: 50px; /* Move down by adding a top margin */
         }
 
         /* Image styling */
@@ -195,13 +194,11 @@
 
 <header id="header">
     <div class="header-container">
-        <!-- Left: Logo and Page Title -->
         <div class="logo-title">
             <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Icon">
             <span class="page-name">Home</span>
         </div>
 
-        <!-- Center: Navigation buttons -->
         <div class="nav-buttons">
             <a href="https://5166-gamez.github.io/home" class="nav-button">Home</a>
             <a href="https://5166-gamez.github.io/games" class="nav-button">Games</a>
@@ -212,15 +209,11 @@
     </div>
 </header>
 
-<!-- Right: Arrows outside of header -->
 <div class="arrows">
-    <span class="arrow" onclick="toggleHeader()">▲</span>
     <span class="arrow" onclick="toggleHeader()">▲</span>
 </div>
 
-<!-- Content Section -->
 <div class="content" id="content">
-    <!-- Section for image, title, and description -->
     <div class="intro-section">
         <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Home">
         <div>
@@ -229,10 +222,8 @@
         </div>
     </div>
 
-    <!-- Divider -->
     <div class="divider"></div>
 
-    <!-- Button Section -->
     <div class="button-section">
         <a href="https://5166-gamez.github.io/games" class="button">
             <img src="https://raw.githubusercontent.com/5166-gamez/home/main/games.png" alt="Games Icon">
@@ -254,20 +245,15 @@
 </div>
 
 <script>
-    let headerVisible = true; // Variable to track header visibility
+    let headerVisible = true;
 
     function toggleHeader() {
         const header = document.getElementById('header');
+        const arrow = document.querySelector('.arrow');
 
-        // Toggle the header visibility and adjust the content margin accordingly
-        if (headerVisible) {
-            header.style.top = "-60px"; // Hide header
-            document.getElementById('content').style.marginTop = "0"; // Remove margin
-        } else {
-            header.style.top = "0"; // Show header
-            document.getElementById('content').style.marginTop = "60px"; // Restore margin
-        }
-        headerVisible = !headerVisible; // Toggle visibility state
+        headerVisible = !headerVisible;
+        header.style.top = headerVisible ? '0' : '-70px';
+        arrow.classList.toggle('hidden', !headerVisible);
     }
 </script>
 
