@@ -9,7 +9,6 @@
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0; /* Reset padding */
         }
 
         /* Header styling */
@@ -18,6 +17,7 @@
             top: 0;
             width: 100%;
             background-color: #131017; /* Slightly darker purple */
+            padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             z-index: 1;
             transition: top 0.5s ease; /* Smooth transition for hiding */
@@ -38,7 +38,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 10px; /* Added padding for logo and title */
         }
 
         /* Logo Image Styling */
@@ -53,13 +52,6 @@
             font-size: 1.2em;
             font-weight: bold;
             color: white;
-        }
-
-        /* Divider styling */
-        .divider {
-            height: 2px;
-            background-color: white; /* Color of the divider */
-            margin: 5px 0; /* Space around the divider */
         }
 
         /* Center section: Navigation buttons */
@@ -111,8 +103,11 @@
         /* Content styling for scrollable effect */
         .content {
             padding-top: 60px; /* Pushes content below the fixed header */
+            margin-top: 0; /* No margin initially */
             height: 200vh; /* Makes the page scrollable */
             display: flex; /* Enable flexbox for layout */
+            justify-content: flex-start; /* Align items to the left */
+            transition: margin-top 0.5s ease; /* Smooth transition for content movement */
             flex-direction: column; /* Arrange sections vertically */
             align-items: flex-start; /* Align items to the left */
         }
@@ -126,8 +121,9 @@
             padding: 20px; /* Padding inside the section */
             border-radius: 8px; /* Rounded corners */
             width: 50%; /* Set to 50% width to maintain alignment */
-            position: relative; /* Use relative positioning */
-            margin: 20px 0; /* Add margin for spacing */
+            position: absolute; /* Absolute positioning to place at the top left */
+            top: 70px; /* Align to the top with padding for the header */
+            left: 20px; /* Padding from the left */
         }
 
         /* Image styling */
@@ -154,7 +150,8 @@
             flex-wrap: wrap; /* Allow buttons to wrap onto the next line */
             gap: 20px; /* Space between buttons */
             padding: 20px; /* Padding around the button section */
-            margin-top: 20px; /* Space from the intro section */
+            margin-top: 100px; /* Space from the intro section */
+            transition: margin-top 0.5s ease; /* Smooth transition for button section */
         }
 
         /* Individual Button with Icon */
@@ -193,8 +190,15 @@
             <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Icon">
             <span class="page-name">Home</span>
         </div>
+
+        <!-- Center: Navigation buttons -->
+        <div class="nav-buttons">
+            <a href="https://5166-gamez.github.io/home" class="nav-button">Home</a>
+            <a href="https://5166-gamez.github.io/games" class="nav-button">Games</a>
+            <a href="https://5166-gamez.github.io/news" class="nav-button">News</a>
+            <a href="https://5166-gamez.github.io/changelogs" class="nav-button">Changelogs</a>
+        </div>
     </div>
-    <div class="divider"></div> <!-- Divider under the title -->
 </header>
 
 <!-- Right: Arrows outside of header -->
@@ -227,13 +231,19 @@
 
     function toggleHeader() {
         const header = document.getElementById("header");
+        const content = document.getElementById("content");
+        const buttonSection = document.getElementById("button-section");
         const arrows = document.querySelectorAll(".arrow");
         
         if (headerVisible) {
             header.style.top = "-60px"; // Hide header upwards
+            content.style.marginTop = "0"; // Move content up
+            buttonSection.style.marginTop = "0"; // Move button section up
             arrows.forEach(arrow => arrow.classList.add("hidden")); // Rotate arrows
         } else {
             header.style.top = "0"; // Show header
+            content.style.marginTop = "60px"; // Move content down
+            buttonSection.style.marginTop = "100px"; // Move button section back down
             arrows.forEach(arrow => arrow.classList.remove("hidden")); // Rotate arrows back
         }
         headerVisible = !headerVisible; // Toggle header visibility
