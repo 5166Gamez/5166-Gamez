@@ -105,7 +105,6 @@
             padding-top: 60px; /* Pushes content below the fixed header */
             height: 200vh; /* Makes the page scrollable */
             display: flex; /* Enable flexbox for layout */
-            justify-content: flex-start; /* Align items to the left */
             flex-direction: column; /* Arrange sections vertically */
             align-items: flex-start; /* Align items to the left */
         }
@@ -144,20 +143,18 @@
 
         /* Divider styling */
         .divider {
-            width: 50%; /* Same width as intro section */
+            width: 100%; /* Full width across the page */
             height: 2px; /* Height of the divider */
             background-color: white; /* Color of the divider */
             margin: 20px 0; /* Spacing above and below the divider */
-            position: absolute; /* Position it under the intro section */
-            top: 160px; /* Adjust this based on your layout */
-            left: 20px; /* Align with intro section */
         }
 
         /* Button Section Styling */
         .button-section {
             display: flex;
-            flex-wrap: wrap; /* Allow buttons to wrap onto the next line */
-            gap: 20px; /* Space between buttons */
+            justify-content: center; /* Center buttons in this section */
+            flex-direction: column; /* Stack buttons vertically */
+            align-items: center; /* Center buttons */
             padding: 20px; /* Padding around the button section */
             margin-top: 30px; /* Space from the divider */
         }
@@ -170,6 +167,7 @@
             padding: 20px; /* Padding inside the button */
             width: 120px; /* Fixed width for buttons */
             transition: background-color 0.3s; /* Transition for hover effect */
+            margin-bottom: 15px; /* Space below each button */
         }
 
         .button:hover {
