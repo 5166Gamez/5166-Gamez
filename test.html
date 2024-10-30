@@ -172,7 +172,6 @@
             margin-bottom: 15px; /* Space below each button */
             text-decoration: none; /* Remove underline from links */
             color: white; /* Text color */
-            position: relative; /* Position for tooltip */
         }
 
         .button:hover {
@@ -189,38 +188,6 @@
         .button-title {
             margin-top: 10px; /* Space above title */
             font-size: 1em; /* Font size for title */
-        }
-
-        /* Tooltip styling */
-        .tooltip {
-            visibility: hidden; /* Initially hidden */
-            width: 120px; /* Width of the tooltip */
-            background-color: black; /* Background color of tooltip */
-            color: white; /* Text color */
-            text-align: center; /* Center the text */
-            border-radius: 5px; /* Rounded corners */
-            padding: 5px 0; /* Padding inside the tooltip */
-            position: absolute; /* Absolute positioning */
-            z-index: 1; /* Above other elements */
-            bottom: 100%; /* Position above the button */
-            left: 50%; /* Center tooltip horizontally */
-            margin-left: -60px; /* Offset for center alignment */
-            opacity: 0; /* Initially invisible */
-            transition: opacity 0.3s; /* Smooth appearance */
-        }
-
-        /* Show tooltip on button hover */
-        .button:hover .tooltip {
-            visibility: visible; /* Show tooltip */
-            opacity: 1; /* Make it visible */
-        }
-
-        /* Hover icon styling */
-        .hover-icon {
-            width: 20px; /* Width of the hover icon */
-            height: 20px; /* Height of the hover icon */
-            margin-left: 5px; /* Space between button image and icon */
-            cursor: pointer; /* Pointer cursor */
         }
     </style>
 </head>
@@ -247,46 +214,41 @@
 
 <!-- Right: Arrows outside of header -->
 <div class="arrows">
-    <span class="arrow" onclick="toggleHeader()">⬆️</span>
+    <span class="arrow" onclick="toggleHeader()">▲</span>
+    <span class="arrow" onclick="toggleHeader()">▲</span>
 </div>
 
-<!-- Main content area -->
+<!-- Content Section -->
 <div class="content" id="content">
+    <!-- Section for image, title, and description -->
     <div class="intro-section">
-        <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Intro Image">
+        <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/home.png" alt="Home">
         <div>
-            <div class="intro-title">Welcome to Our Game!</div>
-            <div class="intro-description">Explore, play, and enjoy your time here.</div>
+            <div class="intro-title">Home</div>
+            <div class="intro-description">Welcome to 5166 Gamez! This is the Home page, to navigate through other pages, use the header at the top or use the buttons at the bottom, while also learning more about the site! Enjoy playing unblocked games!</div>
         </div>
     </div>
 
+    <!-- Divider -->
     <div class="divider"></div>
 
+    <!-- Button Section -->
     <div class="button-section">
-        <!-- Each button now has a tooltip -->
         <a href="https://5166-gamez.github.io/games" class="button">
             <img src="https://raw.githubusercontent.com/5166-gamez/home/main/games.png" alt="Games Icon">
             <div class="button-title">Games</div>
-            <img src="https://example.com/hover-icon.png" class="hover-icon" alt="Info Icon">
-            <div class="tooltip">Check out our games!</div>
         </a>
         <a href="https://5166-gamez.github.io/feedback" class="button">
-            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/feedback.png" alt="Feedback Icon">
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/feedback.png" alt="Feedback Icon">
             <div class="button-title">Feedback</div>
-            <img src="https://example.com/hover-icon.png" class="hover-icon" alt="Info Icon">
-            <div class="tooltip">Give us your feedback!</div>
         </a>
         <a href="https://5166-gamez.github.io/news" class="button">
             <img src="https://raw.githubusercontent.com/5166-gamez/home/main/news.png" alt="News Icon">
             <div class="button-title">News</div>
-            <img src="https://example.com/hover-icon.png" class="hover-icon" alt="Info Icon">
-            <div class="tooltip">Latest updates and news!</div>
         </a>
         <a href="https://5166-gamez.github.io/changelogs" class="button">
             <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Changelogs Icon">
             <div class="button-title">Changelogs</div>
-            <img src="https://example.com/hover-icon.png" class="hover-icon" alt="Info Icon">
-            <div class="tooltip">View changelogs!</div>
         </a>
     </div>
 </div>
