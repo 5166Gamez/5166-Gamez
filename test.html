@@ -54,6 +54,13 @@
             color: white;
         }
 
+        /* Version Info styling */
+        .version-info {
+            text-align: right; /* Align text to the right */
+            font-size: 1em; /* Font size for version */
+            margin-left: 20px; /* Space between title and version text */
+        }
+
         /* Center section: Navigation buttons */
         .nav-buttons {
             display: flex;
@@ -199,6 +206,12 @@
             <span class="page-name">Home</span>
         </div>
 
+        <!-- Version Info -->
+        <div class="version-info">
+            <div>Version:</div>
+            <div>V3.0.0</div>
+        </div>
+
         <!-- Center: Navigation buttons -->
         <div class="nav-buttons">
             <a href="https://5166-gamez.github.io/home" class="nav-button">Home</a>
@@ -237,16 +250,16 @@
             <div class="button-title">Games</div>
         </div>
         <div class="button">
-            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Feedback Icon">
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/feedback.png" alt="Feedback Icon">
             <div class="button-title">Feedback</div>
         </div>
         <div class="button">
-            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="News Icon">
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/news.png" alt="News Icon">
             <div class="button-title">News</div>
         </div>
         <div class="button">
-            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Changelogs Icon">
-            <div class="button-title">Changelogs</div>
+            <img src="https://raw.githubusercontent.com/5166-gamez/home/main/changelog.png" alt="Changelog Icon">
+            <div class="button-title">Changelog</div>
         </div>
     </div>
 </div>
@@ -256,21 +269,10 @@
 
     function toggleHeader() {
         const header = document.getElementById('header');
-        if (headerVisible) {
-            header.style.top = '-60px'; // Move header up (hide)
-            headerVisible = false;
-            // Change arrow direction
-            document.querySelectorAll('.arrow').forEach(arrow => {
-                arrow.classList.toggle('hidden');
-            });
-        } else {
-            header.style.top = '0'; // Move header back down (show)
-            headerVisible = true;
-            // Change arrow direction
-            document.querySelectorAll('.arrow').forEach(arrow => {
-                arrow.classList.toggle('hidden');
-            });
-        }
+        const content = document.getElementById('content');
+        headerVisible = !headerVisible;
+        header.style.top = headerVisible ? '0' : '-100px'; // Adjust the value as needed
+        content.style.paddingTop = headerVisible ? '60px' : '10px'; // Adjust content padding accordingly
     }
 </script>
 </body>
