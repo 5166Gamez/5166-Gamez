@@ -172,6 +172,22 @@
             margin-top: 10px;
             font-size: 1em;
         }
+
+        .github-credit {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .github-credit img {
+            width: 20px;
+            height: 20px;
+        }
     </style>
 </head>
 <body>
@@ -235,13 +251,11 @@
     </a>
 </div>
 
-<div style="position: fixed; bottom: 10px; left: 10px; display: flex; align-items: center; gap: 5px; color: white; opacity: 0.8;">
-    <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/images/gitlogo.png" alt="GitHub Logo" style="width: 20px; height: 20px;">
+<div class="github-credit">
+    <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/images/gitlogo.png" alt="GitHub Logo">
     <span>Created using GitHub Pages</span>
 </div>
 
-</body>
-</html>
 
 <script>
     let headerVisible = true;
