@@ -84,9 +84,13 @@
         }
 
         .arrow {
+            position: absolute;
+            right: 20px;
+            top: 5px;
             cursor: pointer;
-            font-size: 1.2em;
             transition: transform 0.3s ease;
+            width: 20px;
+            height: 20px;
         }
 
         .arrow.hidden {
@@ -233,8 +237,9 @@
 </header>
 
 <div class="arrows">
-    <span class="arrow" onclick="toggleHeader()">^</span>
-</div>
+    <img src="https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/headerButtons/headerarrows.png" class="arrow" onclick="toggleHeader()" alt="Toggle Header">
+    </div>
+</header>
 
 <div class="content" id="content">
     <div class="intro-section">
